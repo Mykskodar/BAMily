@@ -1,0 +1,40 @@
+<html>
+
+<h2><b>BAMily required input:</b></h2>
+
+<table>
+<tr>
+<td><b>-L/-list</b><BR><BR><BR></td><td>FILE<BR><BR><BR></td><td>BAMily takes in a plain text file as input containting the path to each individual's sequence data (BAM format).<BR> For each individual, a carrier status MUST be assigned (1 carrier, 0 non-carrier). For a nuclear family,<BR> in which a father and a child are suspected of sharing a variant of interest not present in either the mother or the other child,<BR> the file would be as follows:</p></td>
+</tr>
+</table>
+<p>/path/to/data/father.sorted.bam:1<BR>
+/path/to/data/mother.sorted.bam:0<BR>
+/path/to/data/child1.sorted.bam:1<BR>
+/path/to/data/chil2.sort.bam:0</p>
+
+<table>
+<tr>
+<td><b>-R/-reference</b></td><td>FILE</td><td>BAMily requires a reference sequence in the FASTA format (.fa or .fasta).</tr>
+</tr>
+</table>
+
+<h2><b>BAMily optional input:</b></h2>
+<table>
+<tr>
+<td><b>-O/-ouput</b></td><td>NAME</td><td>Provide a name for your output VCF file. ["results"]</td>
+</tr>
+<tr>
+<td><b>-P/-prior</b></td><td>DOUBLE</td><td>Set prior for the detection of a variant in a single individual. [0.001]</td>
+</tr>
+<tr>
+<td><b>-Q/-minquality</b></td><td>DOUBLE</td><td>Provide a minimum quality cutoff threshold. [0.2]</td>
+</tr>
+<tr>
+<td><b>-I/-IndAlleles</b></td><td>INT</td><td>Set the number of independent alleles. [number of samples*2]</td>
+</tr>
+</table>
+
+<h2><b>Example:</b></h2>
+<p>java -Xmx1024m -jar /path/to/BAMily.jar -L FamilyB.list -R Sapiens.HG19.fasta -O FamilyB</p>
+
+</html>
